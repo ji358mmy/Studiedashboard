@@ -1,6 +1,199 @@
 {
   "app": "studiedashboard-feed",
-  "updatedAt": null,
-  "courses": [],
-  "tasks": []
+  "updatedAt": "2026-11-21T15:10:00+01:00",
+  "courses": [
+    {
+      "name": "Partner Selection (LO1)",
+      "code": "LO1",
+      "ects": 10
+    },
+    {
+      "name": "PPD (LO2)",
+      "code": "LO2",
+      "ects": 2
+    },
+    {
+      "name": "IBC Spanish (LO3)",
+      "code": "LO3",
+      "ects": 3
+    }
+  ],
+  "tasks": [
+    {
+      "id": "ou310600-dropbox-216207",
+      "title": "Spanish Weekly Assignment #3",
+      "due": "2026-11-23T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216207&ou=310600",
+      "notes": "Zelf maken, zonder AI. Map sluit om 09:00."
+    },
+    {
+      "id": "ou310600-dropbox-237082",
+      "title": "COIL video upload + prerequisites (Padlet)",
+      "due": "2026-11-24T17:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=237082&ou=310600",
+      "notes": "Team"
+    },
+    {
+      "id": "ou310600-dropbox-237083",
+      "title": "COIL Video Assessment (3 video's beoordelen)",
+      "due": "2026-11-25T21:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=237083&ou=310600",
+      "notes": "Team"
+    },
+    {
+      "id": "ou310600-dropbox-234659",
+      "title": "Wk3 Flip the Classroom (PPT stap 1-3)",
+      "due": "2026-11-27T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=234659&ou=310600",
+      "notes": "Groep, formatief"
+    },
+    {
+      "id": "ou310600-dropbox-216188",
+      "title": "Questions for Brand Masters (min. 5 vragen)",
+      "due": "2026-11-27T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216188&ou=310600",
+      "notes": "Groep. Brightspace toont 28 nov 2025; datum aangenomen."
+    },
+    {
+      "id": "ou310600-dropbox-216208",
+      "title": "Spanish Weekly Assignment #4 (cv)",
+      "due": "2026-11-30T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216208&ou=310600",
+      "notes": "Zelf maken, zonder AI."
+    },
+    {
+      "id": "ou310600-dropbox-216181",
+      "title": "Wk4 Country Identification & Evaluation + Collab Portfolio",
+      "due": "2026-12-04T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216181&ou=310600",
+      "notes": "Groep, formatief"
+    },
+    {
+      "id": "ou310600-dropbox-216209",
+      "title": "Spanish Weekly Assignment #5 (social-media post + quiz)",
+      "due": "2026-12-07T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216209&ou=310600",
+      "notes": "Zelf maken, zonder AI."
+    },
+    {
+      "id": "ou310600-dropbox-216182",
+      "title": "Wk5 Supplier Identification & Evaluation + Collab Portfolio",
+      "due": "2026-12-11T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216182&ou=310600",
+      "notes": "Groep, formatief"
+    },
+    {
+      "id": "ou310600-dropbox-216210",
+      "title": "Spanish Weekly Assignment #6",
+      "due": "2026-12-14T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216210&ou=310600",
+      "notes": "Zelf maken, zonder AI."
+    },
+    {
+      "id": "ou310600-ppd-portfolio",
+      "title": "PPD-portfolio inleveren (verplicht template)",
+      "due": "2026-12-14T09:00",
+      "course": "PPD (LO2)",
+      "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2223005",
+      "notes": "Week 6 (14-18 dec), exacte datum en inlevermap nog niet bekend. Voorwaarde voor PPD-gesprek."
+    },
+    {
+      "id": "avans-electives-q4-registratie",
+      "title": "Keuzevakken Q4 inschrijven (top 3, AvansOne)",
+      "due": "2026-12-20T23:59",
+      "course": "PPD (LO2)",
+      "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2254042",
+      "notes": "Inschrijven vanaf 23 nov."
+    },
+    {
+      "id": "ou310600-dropbox-216211",
+      "title": "Spanish Weekly Assignment #7",
+      "due": "2027-01-04T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216211&ou=310600",
+      "notes": "Zelf maken, zonder AI."
+    },
+    {
+      "id": "ou310600-dropbox-216162",
+      "title": "Prerequisite Preparation Negotiation Roleplay",
+      "due": "2027-01-04T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216162&ou=310600",
+      "notes": "Individueel"
+    },
+    {
+      "id": "ou310600-dropbox-216163",
+      "title": "Negotiation roleplay",
+      "due": "2027-01-06T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216163&ou=310600",
+      "notes": "Toets, check tijdslot"
+    },
+    {
+      "id": "ou310600-dropbox-216166",
+      "title": "Prerequisites Partner Selection Pitch",
+      "due": "2027-01-11T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216166&ou=310600",
+      "notes": "Groep. Brightspace toont 11 jan 2026; datum aangenomen."
+    },
+    {
+      "id": "ou310600-ppd-gesprek",
+      "title": "PPD-gesprek (Opp 1)",
+      "due": "2027-01-11T09:00",
+      "course": "PPD (LO2)",
+      "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2237925",
+      "notes": "Week 8 (11-15 jan), tijdslot in AvansOne."
+    },
+    {
+      "id": "ou310600-dropbox-216174",
+      "title": "IBC Written Test Spanish (Opp 1)",
+      "due": "2027-01-11T09:00",
+      "course": "IBC Spanish (LO3)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216174&ou=310600",
+      "notes": "Datum nog onbekend, check AvansOne. Week 8 aangenomen."
+    },
+    {
+      "id": "ou310600-dropbox-216167",
+      "title": "Partner Selection Pitch",
+      "due": "2027-01-15T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216167&ou=310600",
+      "notes": "Groepstoets, check tijdslot"
+    },
+    {
+      "id": "ou310600-dropbox-216170",
+      "title": "Partner Selection Q&A",
+      "due": "2027-01-15T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216170&ou=310600",
+      "notes": "Individuele toets, check tijdslot"
+    },
+    {
+      "id": "ou310600-dropbox-216173",
+      "title": "Business Communication Q&A",
+      "due": "2027-01-15T09:00",
+      "course": "Partner Selection (LO1)",
+      "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216173&ou=310600",
+      "notes": "Individuele toets, check tijdslot"
+    },
+    {
+      "id": "avans-minor-abroad-registratie",
+      "title": "Inschrijven minor abroad 2027-2028 (als je dat wilt)",
+      "due": "2027-01-31T23:59",
+      "course": "PPD (LO2)",
+      "url": "https://brightspace.avans.nl/d2l/le/lessons/80834/units/1802443",
+      "notes": ""
+    }
+  ]
 }
