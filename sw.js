@@ -4,7 +4,7 @@
  * Verhoog VERSION na elke wijziging, dan haalt de app de nieuwe bestanden op.
  */
 'use strict';
-var VERSION = 'studiedashboard-v3';
+var VERSION = 'studiedashboard-v5';
 var FILES = [
   './',
   'index.html',
@@ -12,6 +12,7 @@ var FILES = [
   'manifest.webmanifest',
   'app/core.js',
   'app/app.js',
+  'app/lesstof.js',
   'app/styles.css',
   'app/icons/apple-touch-icon.png',
   'app/icons/icon-192.png',

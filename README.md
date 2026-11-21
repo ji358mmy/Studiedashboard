@@ -27,6 +27,7 @@ Opent het bestand in een ander programma (bijvoorbeeld Teksteditor)? Klik dan me
 | **Week** | Je deadlines per dag, van maandag tot en met zondag. Blader met *Vorige* en *Volgende*. Klik op **+** onder een dag om daar een taak te plannen. |
 | **Vakken & cijfers** | Per vak: cijfer, EC's, en hoeveel taken af zijn. EC's tellen mee zodra je een **5,5 of hoger** hebt, of als je *Gehaald* handmatig aanzet (voor vakken met "voldaan"). |
 | **Aantekeningen** | Afspraken, feedback en ideeën. Koppel ze aan een vak en pin belangrijke vast op de startpagina. |
+| **Lesstof** | Per week en per vak een uitleg van wat er in de lessen behandeld is (samenvatting van de dia's). Wordt elke week aangevuld via `app/lesstof.js`. |
 | **Instellingen** | Licht/donker, wanneer iets "urgent" is, back-up maken en terugzetten, voorbeelden verwijderen. |
 
 **Toevoegen, aanpassen, verwijderen**

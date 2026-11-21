@@ -968,9 +968,95 @@
     openDialog(form);
   }
 
+
+  /* ---------------- Lesstof ---------------- */
+
+  /** Zet *schuin* en **vet** om in elementen (alleen textContent, geen HTML). */
+  function mdInline(text) {
+    var out = [], re = /\*\*([^*]+)\*\*|\*([^*]+)\*/g, last = 0, m;
+    while ((m = re.exec(text))) {
+      if (m.index > last) out.push(text.slice(last, m.index));
+      out.push(m[1] !== undefined ? h('strong', { text: m[1] }) : h('em', { text: m[2] }));
+      last = re.lastIndex;
+    }
+    if (last < text.length) out.push(text.slice(last));
+    return out;
+  }
+
+  function mdCells(line) {
+    return line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(function (c) { return c.trim(); });
+  }
+
+  /** Eenvoudige Markdown: ### kop, alinea's, lijsten (- en 1.) en tabellen. */
+  function mdBlocks(md) {
+    var lines = md.split('\n'), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (!line.trim()) { i++; continue; }
+      if (/^\|/.test(line)) {
+        var rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        var head = mdCells(rows[0]), body = rows.slice(/^\|[\s\-:|]+\|?$/.test(rows[1] || '') ? 2 : 1);
+        out.push(h('div', { class: 'ls-table' }, h('table', null,
+          h('thead', null, h('tr', null, head.map(function (c) { return h('th', null, mdInline(c)); }))),
+          h('tbody', null, body.map(function (r) { return h('tr', null, mdCells(r).map(function (c) { return h('td', null, mdInline(c)); })); })))));
+        continue;
+      }
+      var ul = /^- /.test(line), ol = /^\d+\. /.test(line);
+      if (ul || ol) {
+        var items = [];
+        while (i < lines.length && (ul ? /^- /.test(lines[i]) : /^\d+\. /.test(lines[i]))) {
+          items.push(h('li', null, mdInline(lines[i].replace(/^(- |\d+\. )/, '')))); i++;
+        }
+        out.push(h(ul ? 'ul' : 'ol', null, items));
+        continue;
+      }
+      out.push(h('p', null, mdInline(line)));
+      i++;
+    }
+    return out;
+  }
+
+  /** Splitst een week in vakken (### koppen); elk vak wordt een uitklapblok. */
+  function lesstofWeek(week) {
+    var parts = week.markdown.split(/^### /m);
+    var intro = parts.shift();
+    return h('div', { class: 'ls-week' },
+      intro.trim() ? h('div', { class: 'ls-intro' }, mdBlocks(intro)) : null,
+      parts.map(function (part, idx) {
+        var nl = part.indexOf('\n');
+        var title = nl < 0 ? part : part.slice(0, nl);
+        return h('details', { class: 'card ls-section', open: idx === 0 },
+          h('summary', null, h('span', { text: title.trim() })),
+          h('div', { class: 'ls-body' }, mdBlocks(nl < 0 ? '' : part.slice(nl + 1))));
+      }));
+  }
+
+  function viewLesstof() {
+    var L = window.SD_LESSTOF;
+    var root = h('div');
+    append(root, pageHead('Lesstof', 'Per week en per vak: wat er in de lessen behandeld is, uitgelegd zoals een docent het zou doen.'));
+    if (!L || !L.weeks || !L.weeks.length) {
+      append(root, emptyBox('Nog geen lesstof', 'De samenvattingen worden per week toegevoegd.'));
+      return root;
+    }
+    var weeks = L.weeks.slice().reverse(); // nieuwste week bovenaan
+    if (!state.lesstofWeek || !weeks.some(function (w) { return w.id === state.lesstofWeek; })) state.lesstofWeek = weeks[0].id;
+    append(root, h('div', { class: 'segmented ls-tabs', role: 'tablist' }, weeks.map(function (w) {
+      var on = w.id === state.lesstofWeek;
+      return h('button', { type: 'button', class: on ? 'active' : null, role: 'tab', 'aria-selected': on ? 'true' : 'false',
+        text: w.title.replace(/\s*\(.*\)$/, ''), on: { click: function () { state.lesstofWeek = w.id; render(); } } });
+    })));
+    var cur = weeks.filter(function (w) { return w.id === state.lesstofWeek; })[0];
+    append(root, h('h2', { class: 'ls-title', text: cur.title }));
+    append(root, lesstofWeek(cur));
+    if (L.updatedAt) append(root, h('p', { class: 'ls-foot', text: 'Bijgewerkt: ' + L.updatedAt + '. Controleer bij twijfel altijd de dia\'s in Brightspace.' }));
+    return root;
+  }
+
   /* ---------------- Navigatie en render ---------------- */
 
-  var VIEWS = { overzicht: viewOverview, taken: viewTasks, week: viewWeek, vakken: viewCourses, aantekeningen: viewNotes, instellingen: viewSettings };
+  var VIEWS = { overzicht: viewOverview, taken: viewTasks, week: viewWeek, vakken: viewCourses, aantekeningen: viewNotes, lesstof: viewLesstof, instellingen: viewSettings };
 
   function render() {
     var view = $('view');
