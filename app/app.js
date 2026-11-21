@@ -169,6 +169,25 @@
 
   var STATUS_LABEL = { 'te-laat': 'Te laat', urgent: 'Urgent', binnenkort: 'Binnenkort', later: '', af: 'Af', 'geen-datum': '' };
 
+
+  /** Uitleg van een opdracht (uit de deadlinelijst): regels, '- ' wordt een lijst, '## ' een kopje. */
+  function instructionsBlock(text) {
+    var out = [], list = null;
+    text.split('\n').forEach(function (line) {
+      var l = line.trim();
+      if (!l) { list = null; return; }
+      if (/^- /.test(l)) {
+        if (!list) { list = h('ul'); out.push(list); }
+        append(list, h('li', null, mdInline(l.slice(2))));
+        return;
+      }
+      list = null;
+      if (/^## /.test(l)) out.push(h('h4', null, mdInline(l.slice(3))));
+      else out.push(h('p', null, mdInline(l)));
+    });
+    return h('div', { class: 'task-instr-body' }, out);
+  }
+
   function taskItem(task, opts) {
     opts = opts || {};
     var n = now();
@@ -197,7 +216,10 @@
 
     return h('li', { class: 'task' + (task.done ? ' done' : ''), style: course ? { '--course-color': course.color } : null },
       check,
-      h('div', { class: 'task-main' }, h('div', { class: 'task-title', text: task.title }), meta),
+      h('div', { class: 'task-main' }, h('div', { class: 'task-title', text: task.title }), meta,
+        task.feed && task.feed.instructions && !task.done && !opts.compact
+          ? h('details', { class: 'task-instr' }, h('summary', { text: 'Wat moet je maken?' }), instructionsBlock(task.feed.instructions))
+          : null),
       actions
     );
   }
@@ -833,7 +855,10 @@
         field('Naam', title),
         h('div', { class: 'row' }, field('Deadline (datum)', date, { hint: 'Leeg laten mag.' }), field('Tijd', time, { hint: 'Leeg = einde van de dag.' })),
         h('div', { class: 'row' }, field('Vak', course), field('Prioriteit', prio)),
-        field('Notities', notes)
+        field('Notities', notes),
+        existing && existing.feed && existing.feed.instructions
+          ? h('div', { class: 'task-instr open' }, h('strong', { text: 'Wat moet je maken? (uit Brightspace)' }), instructionsBlock(existing.feed.instructions))
+          : null
       ],
       existing ? h('button', { type: 'button', class: 'btn danger', text: 'Verwijderen', on: { click: function () { closeDialog(); deleteTask(existing.id); } } }) : null
     );
@@ -847,7 +872,8 @@
         title: title.value, due: due, courseId: course.value, priority: prio.value, notes: notes.value,
         done: existing ? existing.done : false, doneAt: existing ? existing.doneAt : null,
         createdAt: existing ? existing.createdAt : undefined, example: existing ? existing.example : false,
-        source: existing ? existing.source : null, externalId: existing ? existing.externalId : null, url: existing ? existing.url : null
+        source: existing ? existing.source : null, externalId: existing ? existing.externalId : null, url: existing ? existing.url : null,
+        feed: existing ? existing.feed : null
       };
       var r = SD.validateTask(input, state.data.courses);
       if (!r.ok) { showErrors(form, r.errors); return; }

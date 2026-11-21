@@ -157,6 +157,6 @@ studiedashboard/
 - Tekst van de gebruiker wordt altijd als tekst (`textContent`) getoond en nooit als HTML. Een back-upbestand kan dus geen code uitvoeren.
 - Back-upformaat: `{ "app": "studiedashboard", "exportedAt": "...", "data": { "version": 1, "settings": {...}, "courses": [...], "tasks": [...], "notes": [...] } }`.
 - Op het webadres werkt een service worker (`sw.js`): eerst netwerk, zonder internet de bewaarde kopie. Verhoog `VERSION` in `sw.js` na een wijziging.
-- `deadlines.json` heeft het formaat `{ "app": "studiedashboard-feed", "updatedAt", "courses": [{ "name", "code", "ects" }], "tasks": [{ "id", "title", "due": "YYYY-MM-DDTHH:mm", "course", "url", "notes" }] }`. `id` moet per opdracht altijd hetzelfde blijven. Samenvoegen gebeurt in `mergeFeed` in `core.js`.
+- `deadlines.json` heeft het formaat `{ "app": "studiedashboard-feed", "updatedAt", "courses": [{ "name", "code", "ects" }], "tasks": [{ "id", "title", "due": "YYYY-MM-DDTHH:mm", "course", "url", "notes", "instructions" }] }`. `instructions` is de uitleg van de opdracht (wat je moet maken), wordt bij elke update overschreven en staat onder "Wat moet je maken?" bij de taak. `id` moet per opdracht altijd hetzelfde blijven. Samenvoegen gebeurt in `mergeFeed` in `core.js`.
 - Back-up op iPhone/iPad gaat via het deelmenu (`navigator.share`), op de Mac via een download.
 - Automatisch getest in Chromium, ook op iPhone-formaat en offline (licht, donker, smal scherm). Gebouwd met functies die Safari 15.4 of nieuwer, Chrome, Edge en Firefox ondersteunen.

@@ -422,3 +422,11 @@ textarea.input.tall { min-height: 260px; }
 .ls-table th, .ls-table td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
 .ls-table th { background: var(--surface-2); }
 .ls-foot { color: var(--text-muted); font-size: 13px; margin-top: 16px; }
+/* Uitleg bij een opdracht */
+.task-instr { margin-top: 8px; font-size: 14px; }
+.task-instr > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+.task-instr-body { margin-top: 6px; padding: 8px 12px; background: var(--surface-2); border-radius: var(--radius-sm); line-height: 1.5; }
+.task-instr-body p { margin: 6px 0; }
+.task-instr-body h4 { margin: 10px 0 4px; font-size: 14px; }
+.task-instr-body ul { margin: 4px 0; padding-left: 20px; }
+.task-instr.open { margin-top: 4px; }

@@ -27,6 +27,7 @@
 
   var MAX_TITLE = 200;
   var MAX_TEXT = 20000;
+  var MAX_INSTRUCTIONS = 6000;
 
   /* ---------------- Hulpfuncties ---------------- */
 
@@ -59,7 +60,8 @@
       title: cleanText(v.title, MAX_TITLE),
       due: normalizeDue(v.due),
       url: cleanUrl(v.url),
-      course: cleanText(v.course, MAX_TITLE)
+      course: cleanText(v.course, MAX_TITLE),
+      instructions: typeof v.instructions === 'string' ? cleanText(v.instructions, MAX_INSTRUCTIONS) : ''
     };
   }
 
@@ -695,7 +697,7 @@
       var extId = 'bs:' + cleanText(ft.id, 190);
       if (dismissed[extId]) return;
 
-      var incoming = cleanFeedSnapshot({ title: ft.title, due: ft.due, url: ft.url, course: ft.course });
+      var incoming = cleanFeedSnapshot({ title: ft.title, due: ft.due, url: ft.url, course: ft.course, instructions: ft.instructions });
       if (!incoming.title || (ft.due && !incoming.due)) { skipped++; return; }
       var course = ensureCourse(incoming.course);
 
