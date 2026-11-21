@@ -52,6 +52,17 @@
     return s;
   }
 
+  /** Wat de deadlinelijst de vorige keer over een taak zei (om eigen wijzigingen te herkennen). */
+  function cleanFeedSnapshot(v) {
+    if (!isObject(v)) return null;
+    return {
+      title: cleanText(v.title, MAX_TITLE),
+      due: normalizeDue(v.due),
+      url: cleanUrl(v.url),
+      course: cleanText(v.course, MAX_TITLE)
+    };
+  }
+
   function pad(n) {
     return (n < 10 ? '0' : '') + n;
   }
@@ -187,6 +198,7 @@
         source: input.source === 'brightspace' ? 'brightspace' : null,
         externalId: input.source === 'brightspace' && typeof input.externalId === 'string' ? cleanText(input.externalId, 200) : null,
         url: cleanUrl(input.url),
+        feed: input.source === 'brightspace' ? cleanFeedSnapshot(input.feed) : null,
         createdAt: typeof input.createdAt === 'string' ? input.createdAt : new Date().toISOString()
       }
     };
@@ -222,6 +234,7 @@
         // 'auto' = gehaald als cijfer >= voldoende; 'ja'/'nee' = handmatig
         passed: ['auto', 'ja', 'nee'].indexOf(input.passed) >= 0 ? input.passed : 'auto',
         color: color,
+        feedName: typeof input.feedName === 'string' && input.feedName.trim() ? cleanText(input.feedName, MAX_TITLE) : null,
         example: input.example === true
       }
     };
@@ -641,66 +654,96 @@
     var dismissed = {};
     out.settings.feedDismissed.forEach(function (k) { dismissed[k] = true; });
 
+    function key(name) { return String(name || '').trim().toLowerCase(); }
+
+    function courseName(id) {
+      for (var i = 0; i < out.courses.length; i++) if (out.courses[i].id === id) return out.courses[i].feedName || out.courses[i].name;
+      return '';
+    }
+
+    /* Zoekt het vak bij een naam uit de lijst. Eerst op de oorspronkelijke
+       Brightspace-naam (zodat hernoemen mag), dan op naam of code. */
     function findCourse(name) {
-      var n = String(name || '').trim().toLowerCase();
+      var n = key(name);
       if (!n) return null;
-      for (var i = 0; i < out.courses.length; i++) {
-        if (out.courses[i].name.toLowerCase() === n || (out.courses[i].code && out.courses[i].code.toLowerCase() === n)) return out.courses[i];
+      var i;
+      for (i = 0; i < out.courses.length; i++) if (out.courses[i].feedName && key(out.courses[i].feedName) === n) return out.courses[i];
+      for (i = 0; i < out.courses.length; i++) {
+        var c = out.courses[i];
+        if (!c.feedName && (key(c.name) === n || (c.code && key(c.code) === n))) { c.feedName = cleanText(name, MAX_TITLE); return c; }
       }
       return null;
     }
 
+    function ensureCourse(name, extra) {
+      if (!key(name)) return null;
+      var c = findCourse(name);
+      if (c || dismissed['course:' + key(name)]) return c;
+      extra = extra || {};
+      var r = validateCourse({ name: name, code: extra.code, period: extra.period, ects: extra.ects, feedName: name }, out.courses);
+      if (!r.ok) return null;
+      out.courses.push(r.value);
+      return r.value;
+    }
+
     (Array.isArray(feed.courses) ? feed.courses : []).forEach(function (c) {
-      if (!isObject(c) || findCourse(c.name)) return;
-      var r = validateCourse({ name: c.name, code: c.code, period: c.period, ects: c.ects }, out.courses);
-      if (r.ok) out.courses.push(r.value);
+      if (isObject(c)) ensureCourse(c.name, c);
     });
 
     feed.tasks.slice(0, 1000).forEach(function (ft) {
       if (!isObject(ft) || typeof ft.id !== 'string' || !ft.id.trim()) { skipped++; return; }
       var extId = 'bs:' + cleanText(ft.id, 190);
       if (dismissed[extId]) return;
-      var course = null;
-      if (ft.course) {
-        course = findCourse(ft.course);
-        if (!course) {
-          var rc = validateCourse({ name: ft.course }, out.courses);
-          if (rc.ok) { out.courses.push(rc.value); course = rc.value; }
-        }
-      }
+
+      var incoming = cleanFeedSnapshot({ title: ft.title, due: ft.due, url: ft.url, course: ft.course });
+      if (!incoming.title || (ft.due && !incoming.due)) { skipped++; return; }
+      var course = ensureCourse(incoming.course);
+
       var existing = null;
       for (var i = 0; i < out.tasks.length; i++) {
         if (out.tasks[i].externalId === extId) { existing = out.tasks[i]; break; }
       }
-      var base = existing ? JSON.parse(JSON.stringify(existing)) : { priority: 'normaal', done: false, notes: cleanText(ft.notes, MAX_TEXT) };
-      base.title = ft.title;
-      base.due = ft.due || null;
-      base.url = ft.url;
-      base.courseId = course ? course.id : (existing ? existing.courseId : null);
-      base.source = 'brightspace';
-      base.externalId = extId;
-      var r = validateTask(base, out.courses);
-      if (!r.ok) { skipped++; return; }
-      if (existing) {
-        var e = existing, v = r.value;
-        if (e.title !== v.title || e.due !== v.due || e.url !== v.url || e.courseId !== v.courseId) {
-          upsert(out.tasks, v);
-          updated++;
-        }
-      } else {
-        out.tasks.push(r.value);
+
+      if (!existing) {
+        var rn = validateTask({
+          title: incoming.title, due: incoming.due, url: incoming.url, courseId: course ? course.id : null,
+          priority: 'normaal', done: false, notes: cleanText(ft.notes, MAX_TEXT),
+          source: 'brightspace', externalId: extId, feed: incoming
+        }, out.courses);
+        if (!rn.ok) { skipped++; return; }
+        out.tasks.push(rn.value);
         added++;
+        return;
       }
+
+      // Alleen wat Brightspace sinds de vorige keer veranderde, wordt overgenomen.
+      // Wat je zelf aanpaste (naam, datum, vak), blijft dus staan.
+      var prev = existing.feed || { title: existing.title, due: existing.due, url: existing.url, course: courseName(existing.courseId) };
+      var task = JSON.parse(JSON.stringify(existing));
+      var changed = false;
+      if (incoming.title !== prev.title && incoming.title !== task.title) { task.title = incoming.title; changed = true; }
+      if (incoming.due !== prev.due && incoming.due !== task.due) { task.due = incoming.due; changed = true; }
+      if (incoming.url !== prev.url && incoming.url !== task.url) { task.url = incoming.url; changed = true; }
+      if (key(incoming.course) !== key(prev.course)) {
+        var cid = course ? course.id : null;
+        if (cid !== task.courseId) { task.courseId = cid; changed = true; }
+      }
+      task.feed = incoming;
+      var r = validateTask(task, out.courses);
+      if (!r.ok) { skipped++; return; }
+      upsert(out.tasks, r.value);
+      if (changed) updated++;
     });
     if (typeof feed.updatedAt === 'string') out.settings.feedUpdatedAt = cleanText(feed.updatedAt, 50);
     return { ok: true, data: out, added: added, updated: updated, skipped: skipped };
   }
 
-  /** Onthoudt dat je een Brightspace-taak zelf verwijderd hebt, zodat hij niet terugkomt. */
-  function rememberDismissed(data, task) {
-    if (task && task.externalId && data.settings.feedDismissed.indexOf(task.externalId) < 0) {
-      data.settings.feedDismissed.push(task.externalId);
-    }
+  /** Onthoudt dat je een Brightspace-taak of -vak zelf verwijderd hebt, zodat het niet terugkomt. */
+  function rememberDismissed(data, item) {
+    var k = null;
+    if (item && item.externalId) k = item.externalId;
+    else if (item && item.feedName) k = 'course:' + String(item.feedName).trim().toLowerCase();
+    if (k && data.settings.feedDismissed.indexOf(k) < 0) data.settings.feedDismissed.push(k);
     return data;
   }
 
@@ -732,7 +775,8 @@
     data.notes = [
       { id: 'vb-n1', title: 'Zo werken aantekeningen', body: 'Dit is een voorbeeld. Schrijf hier afspraken met je groep, feedback van docenten of dingen die je niet wilt vergeten.\n\nKoppel een aantekening aan een vak, dan zie je hem ook bij dat vak terug.\n\nVerwijder alle voorbeelden in één keer via Instellingen.', courseId: 'vb-vak-project', pinned: true, example: true, updatedAt: '2026-11-21T12:00:00.000Z' }
     ];
-    return data;
+    // Door de validatie halen, zodat voorbeelden precies dezelfde vorm hebben als eigen gegevens
+    return sanitizeData(data).data;
   }
 
   function removeExamples(data) {

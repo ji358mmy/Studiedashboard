@@ -462,6 +462,55 @@
     assert.equal(l.data.tasks[0].externalId, 'bs:a');
   });
 
+  test('feed: eigen aanpassing van naam of datum blijft staan', function () {
+    var f = feed([{ id: 'a', title: 'A', due: '2026-11-27T09:00' }]);
+    var d = SD.mergeFeed(SD.emptyData(), f).data;
+    d.tasks[0].title = 'Mijn eigen naam';
+    d.tasks[0].due = '2026-11-26T12:00';
+    var r = SD.mergeFeed(d, f);
+    assert.equal(r.updated, 0);
+    assert.equal(r.data.tasks[0].title, 'Mijn eigen naam');
+    assert.equal(r.data.tasks[0].due, '2026-11-26T12:00');
+    // Brightspace verschuift de datum later toch: dan wint de nieuwe datum
+    var r2 = SD.mergeFeed(r.data, feed([{ id: 'a', title: 'A', due: '2026-12-01T09:00' }]));
+    assert.equal(r2.updated, 1);
+    assert.equal(r2.data.tasks[0].due, '2026-12-01T09:00');
+    assert.equal(r2.data.tasks[0].title, 'Mijn eigen naam');
+  });
+  test('feed: hernoemd vak wordt niet opnieuw aangemaakt', function () {
+    var f = feed([{ id: 'a', title: 'A', course: 'IBC Spanish (LO3)' }], [{ name: 'IBC Spanish (LO3)', ects: 4 }]);
+    var d = SD.mergeFeed(SD.emptyData(), f).data;
+    d.courses[0].name = 'Spaans';
+    var r = SD.mergeFeed(d, f);
+    assert.equal(r.data.courses.length, 1);
+    assert.equal(r.data.tasks[0].courseId, d.courses[0].id);
+  });
+  test('feed: verwijderd vak komt niet terug', function () {
+    var f = feed([{ id: 'a', title: 'A', course: 'PPD (LO2)' }], [{ name: 'PPD (LO2)' }]);
+    var d = SD.mergeFeed(SD.emptyData(), f).data;
+    SD.rememberDismissed(d, d.courses[0]);
+    SD.deleteCourse(d, d.courses[0].id);
+    var r = SD.mergeFeed(d, f);
+    assert.equal(r.data.courses.length, 0);
+    assert.equal(r.data.tasks[0].courseId, null);
+  });
+  test('feed: oude taken zonder geheugen worden niet onnodig aangepast', function () {
+    var d = SD.mergeFeed(SD.emptyData(), feed([{ id: 'a', title: 'A', due: '2026-11-27T09:00' }])).data;
+    d.tasks[0].feed = null; // zoals opgeslagen door de vorige versie van de app
+    var r = SD.mergeFeed(d, feed([{ id: 'a', title: 'A', due: '2026-11-27T09:00' }]));
+    assert.equal(r.updated, 0);
+    assert.ok(r.data.tasks[0].feed && r.data.tasks[0].feed.title === 'A');
+  });
+  test('instellingen: thema blijft bewaard na opslaan en laden', function () {
+    ['licht', 'donker', 'auto'].forEach(function (th) {
+      var st = TR.memoryStorage();
+      var d = SD.emptyData();
+      d.settings.theme = th;
+      SD.saveData(st, d);
+      assert.equal(SD.loadData(st).data.settings.theme, th);
+    });
+  });
+
   test('upsert: toevoegen en vervangen', function () {
     var list = [{ id: 'a', v: 1 }];
     SD.upsert(list, { id: 'a', v: 2 });

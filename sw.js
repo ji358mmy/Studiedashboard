@@ -31,9 +31,12 @@ self.addEventListener('activate', function (e) {
 // Eerst het netwerk (zodat updates binnenkomen), bij geen internet de opgeslagen kopie.
 self.addEventListener('fetch', function (e) {
   if (e.request.method !== 'GET') return;
+  var url = new URL(e.request.url);
+  // De deadlinelijst altijd vers ophalen en niet bewaren (anders groeit de opslag bij elke keer openen)
+  if (url.pathname.slice(-15) === '/deadlines.json') return;
   e.respondWith(
     fetch(e.request).then(function (res) {
-      if (res && res.ok && new URL(e.request.url).origin === self.location.origin) {
+      if (res && res.ok && url.origin === self.location.origin && !url.search) {
         var copy = res.clone();
         caches.open(VERSION).then(function (c) { c.put(e.request, copy); });
       }
