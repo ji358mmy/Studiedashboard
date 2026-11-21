@@ -114,6 +114,16 @@
   }
 
   var startupNotice = null;
+  var fileTipClosed = false;
+  var iosTipClosed = false;
+  /** iPhone/iPad in een gewoon Safari-tabblad (niet via het beginscherm-icoon). */
+  function isIosBrowserTab() {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    var standalone = navigator.standalone === true || (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches);
+    return ios && !standalone && location.protocol === 'https:';
+  }
+  var WEB_URL = 'https://ji358mmy.github.io/Studiedashboard/';
 
   function renderBanner() {
     var b = $('banner');
@@ -129,6 +139,13 @@
     } else if (startupNotice) {
       msg = startupNotice;
       actions.push(h('button', { type: 'button', class: 'btn small', text: 'Sluiten', on: { click: function () { startupNotice = null; renderBanner(); } } }));
+    } else if (location.protocol === 'file:' && !fileTipClosed) {
+      msg = 'Tip: gebruik de webversie. Safari bewaart de gegevens van een los bestand niet altijd, en alleen in de webversie komen je deadlines automatisch binnen.';
+      actions.push(h('a', { class: 'btn small', href: WEB_URL, text: 'Open webversie' }));
+      actions.push(h('button', { type: 'button', class: 'btn small', text: 'Sluiten', on: { click: function () { fileTipClosed = true; renderBanner(); } } }));
+    } else if (isIosBrowserTab() && !iosTipClosed) {
+      msg = 'Je opent het dashboard nu in Safari. Gebruik liever het icoon op je beginscherm: Safari en het icoon bewaren hun gegevens apart.';
+      actions.push(h('button', { type: 'button', class: 'btn small', text: 'Sluiten', on: { click: function () { iosTipClosed = true; renderBanner(); } } }));
     } else if (SD.backupDue(state.data.settings, now())) {
       msg = 'Tijd voor een back-up van je gegevens.';
       actions.push(h('button', { type: 'button', class: 'btn small', text: 'Back-up maken', on: { click: exportBackup } }));
@@ -543,6 +560,9 @@
 
   function viewSettings() {
     var d = state.data, s = d.settings;
+    // Altijd de actuele instellingen aanpassen: de gegevens kunnen intussen
+    // vervangen zijn (bijvoorbeeld door nieuwe deadlines die binnenkwamen).
+    function live() { return state.data.settings; }
     var root = h('div');
     append(root, pageHead('Instellingen', 'Weergave, back-ups en je gegevens.'));
 
@@ -550,29 +570,29 @@
       h('option', { value: 'auto', text: 'Automatisch (volgt je Mac)', selected: s.theme === 'auto' }),
       h('option', { value: 'licht', text: 'Licht', selected: s.theme === 'licht' }),
       h('option', { value: 'donker', text: 'Donker', selected: s.theme === 'donker' }));
-    themeSel.addEventListener('change', function () { s.theme = themeSel.value; applyTheme(); commit('Weergave aangepast'); });
+    themeSel.addEventListener('change', function () { live().theme = themeSel.value; applyTheme(); commit('Weergave aangepast'); });
 
     var urgentSel = h('select', { class: 'input', 'aria-label': 'Urgent binnen' });
     [1, 2, 3, 5, 7, 14].forEach(function (n) { append(urgentSel, h('option', { value: String(n), text: n + (n === 1 ? ' dag' : ' dagen'), selected: s.urgentDays === n })); });
-    urgentSel.addEventListener('change', function () { s.urgentDays = parseInt(urgentSel.value, 10); commit('Opgeslagen'); });
+    urgentSel.addEventListener('change', function () { live().urgentDays = parseInt(urgentSel.value, 10); commit('Opgeslagen'); });
 
     var passInput = h('input', { class: 'input', style: { width: '80px' }, value: SD.formatGrade(s.passGrade), 'aria-label': 'Voldoende vanaf', inputmode: 'decimal' });
     passInput.addEventListener('change', function () {
       var g = SD.parseGrade(passInput.value);
       if (!g.ok || g.value === null) { toast(g.error || 'Vul een cijfer in.'); passInput.value = SD.formatGrade(s.passGrade); return; }
-      s.passGrade = g.value; commit('Opgeslagen');
+      live().passGrade = g.value; commit('Opgeslagen');
     });
 
     var remindSel = h('select', { class: 'input', 'aria-label': 'Back-upherinnering' });
     [[0, 'Uit'], [7, 'Elke week'], [14, 'Elke 2 weken'], [30, 'Elke maand']].forEach(function (o) {
       append(remindSel, h('option', { value: String(o[0]), text: o[1], selected: s.backupReminderDays === o[0] }));
     });
-    remindSel.addEventListener('change', function () { s.backupReminderDays = parseInt(remindSel.value, 10); commit('Opgeslagen'); });
+    remindSel.addEventListener('change', function () { live().backupReminderDays = parseInt(remindSel.value, 10); commit('Opgeslagen'); });
 
     var autoSel = h('select', { class: 'input', 'aria-label': 'Automatisch ophalen', disabled: !online() },
       h('option', { value: 'aan', text: 'Aan', selected: s.autoImport }),
       h('option', { value: 'uit', text: 'Uit', selected: !s.autoImport }));
-    autoSel.addEventListener('change', function () { s.autoImport = autoSel.value === 'aan'; commit('Opgeslagen'); if (s.autoImport) fetchFeed(false); });
+    autoSel.addEventListener('change', function () { live().autoImport = autoSel.value === 'aan'; commit('Opgeslagen'); if (live().autoImport) fetchFeed(false); });
 
     append(root, h('div', { class: 'settings' },
       h('section', { class: 'card' },
@@ -888,6 +908,7 @@
     var p = SD.courseProgress(state.data, course.id);
     confirmDialog('Vak verwijderen?', '"' + course.name + '" wordt verwijderd. ' + (p.total ? 'De ' + p.total + ' taken van dit vak blijven bestaan, zonder vak.' : ''), 'Verwijderen', function () {
       var before = snapshot();
+      SD.rememberDismissed(state.data, course);
       SD.deleteCourse(state.data, course.id);
       if (state.taskFilter.courseId === course.id) state.taskFilter.courseId = '';
       if (state.noteFilter.courseId === course.id) state.noteFilter.courseId = '';
@@ -1021,7 +1042,11 @@
 
     window.addEventListener('hashchange', route);
     // Elke minuut verversen, zodat 'urgent' en 'te laat' kloppen als de app openstaat
-    setInterval(function () { if (!(hasDialog && dialog.open)) render(); }, 60000);
+    setInterval(function () {
+      var a = document.activeElement;
+      var typing = a && /INPUT|TEXTAREA|SELECT/.test(a.tagName);
+      if (!(hasDialog && dialog.open) && !typing) render();
+    }, 60000);
 
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';

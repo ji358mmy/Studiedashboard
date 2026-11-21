@@ -90,7 +90,7 @@ De iPhone kan geen bestand van je Mac openen als app. Daarom staat het dashboard
 
 **Updates gaan vanzelf.** Een nieuwe versie van de app komt automatisch binnen de volgende keer dat je hem met internet opent.
 
-**Deadlines komen vanzelf binnen.** Elke ochtend wordt Brightspace gecontroleerd en worden je deadlines in de lijst `deadlines.json` gezet. Zodra je de app opent, worden nieuwe deadlines toegevoegd (label **Brightspace**) en worden verschoven datums bijgewerkt. Wat je zelf afvinkt, je prioriteit en je notities blijven van jou. Een deadline die je verwijdert, komt niet terug. Je kunt dit uitzetten via **Instellingen → Automatische deadlines**. Let op: deze lijst staat openbaar op GitHub (alleen de namen en datums van opdrachten, geen cijfers of aantekeningen).
+**Deadlines komen vanzelf binnen.** Elke ochtend wordt Brightspace gecontroleerd en worden je deadlines in de lijst `deadlines.json` gezet. Zodra je de app opent, worden nieuwe deadlines toegevoegd (label **Brightspace**) en worden verschoven datums bijgewerkt. Wat je zelf afvinkt, je prioriteit en je notities blijven van jou, net als een naam of datum die je zelf hebt aangepast. Verandert Brightspace later toch de datum, dan krijg je die nieuwe datum. Een deadline of vak dat je verwijdert, komt niet terug, en een vak mag je gewoon een andere naam geven. Je kunt dit uitzetten via **Instellingen → Automatische deadlines**. Let op: deze lijst staat openbaar op GitHub (alleen de namen en datums van opdrachten, geen cijfers of aantekeningen).
 
 **Synchroniseert het met je Mac? Nee.** Je iPhone en je Mac hebben elk hun eigen gegevens. Wat je op de ene invult, zie je niet vanzelf op de andere. Overzetten doe je met een back-up:
 1. Op het apparaat met de nieuwste gegevens: **Instellingen → Download back-up**. Op de iPhone kies je in het menu **Bewaar in Bestanden** en dan **iCloud Drive**.
@@ -119,9 +119,9 @@ Tip: kies één apparaat als "hoofdapparaat" (bijvoorbeeld je iPhone) en gebruik
 
 ## 6. Tests
 
-De rekenregels, de opslag en het automatisch ophalen zijn getest (57 tests): sorteren, urgentie, EC's, gemiddelde, invoercontrole, opslaan en herladen, beschadigde opslag, volle opslag en back-ups.
+De rekenregels, de opslag en het automatisch ophalen zijn getest (62 tests): sorteren, urgentie, EC's, gemiddelde, invoercontrole, opslaan en herladen, beschadigde opslag, volle opslag en back-ups.
 
-- **Zonder programmeerkennis:** dubbelklik op `tests/tests.html`. Je ziet een groene balk "Alle 57 tests geslaagd". Je eigen gegevens worden daarbij niet gebruikt.
+- **Zonder programmeerkennis:** dubbelklik op `tests/tests.html`. Je ziet een groene balk "Alle 62 tests geslaagd". Je eigen gegevens worden daarbij niet gebruikt.
 - **Met Node.js (optioneel):** open Terminal in de map en typ `node tests/run-tests.js`.
 
 ---
