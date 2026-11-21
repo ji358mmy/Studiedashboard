@@ -83,7 +83,7 @@ Wil je een melding als het tijd is voor een back-up? Zet dan bij **Instellingen 
 De iPhone kan geen bestand van je Mac openen als app. Daarom staat het dashboard op een eigen webadres (via GitHub Pages, gratis). Dat adres laad je één keer, daarna zet je het als app op je beginscherm. Het werkt dan ook zonder internet.
 
 **Installeren**
-1. Open het webadres van je dashboard in **Safari** op je iPhone (bijvoorbeeld `https://ji358mmy.github.io/studiedashboard/`).
+1. Open het webadres van je dashboard in **Safari** op je iPhone (bijvoorbeeld `https://ji358mmy.github.io/Studiedashboard/`).
 2. Tik onderin op het **deel-icoon** (vierkantje met pijl omhoog).
 3. Kies **Zet op beginscherm** en tik op **Voeg toe**.
 4. Open het dashboard voortaan via het rode icoon **Studie** op je beginscherm.
