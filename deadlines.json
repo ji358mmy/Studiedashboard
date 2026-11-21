@@ -1,6 +1,6 @@
 {
   "app": "studiedashboard-feed",
-  "updatedAt": "2026-11-21T15:10:00+01:00",
+  "updatedAt": "2026-11-21T15:40",
   "courses": [
     {
       "name": "Partner Selection (LO1)",
@@ -25,7 +25,8 @@
       "due": "2026-11-23T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216207&ou=310600",
-      "notes": "Zelf maken, zonder AI. Map sluit om 09:00."
+      "notes": "Zelf maken, zonder AI. Map sluit om 09:00.",
+      "instructions": "## Wat moet je maken?\nMaak 3 oefeningen en upload een screenshot van je antwoorden:\n- *Ejercicio hay estar 1* (bestand op Brightspace, Spanish > Wk 2)\n- LE unidad 9, oefening 2 (ser / estar / hay)\n- LE unidad 9, oefening 10 (vormen van het imperfecto)\n## Inleveren\nScreenshot(s) in de map op Brightspace, vóór 9:00. Zelf maken. Uitleg over ser/estar/hay en het imperfecto staat in Lesstof, week 2."
     },
     {
       "id": "ou310600-dropbox-237082",
@@ -33,7 +34,8 @@
       "due": "2026-11-24T17:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=237082&ou=310600",
-      "notes": "Team"
+      "notes": "Team",
+      "instructions": "## Wat moet je maken?\nMet je COIL-team: een video van 3 minuten met advies voor beginnende onderhandelaars in jullie 3 landen (theorie vs. praktijk, do's en don'ts, relatie opbouwen).\n## Plus de prerequisites (één document)\n- Transcripten en analyse van de 3 interviews\n- Naam, functie en contactgegevens van de 3 geïnterviewden\n- Lijst met gebruikte bronnen (desk research)\n- De interviewvragenlijst\n- Onderbouwing van jullie keuzes voor de video\n- Bewijs dat het hele team minstens 2 keer samen was\n## Inleveren\nOp de Padlet (Morning of Afternoon, zie Brightspace > COIL), vóór 17:00 Nederlandse tijd."
     },
     {
       "id": "ou310600-dropbox-237083",
@@ -41,7 +43,8 @@
       "due": "2026-11-25T21:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=237083&ou=310600",
-      "notes": "Team"
+      "notes": "Team",
+      "instructions": "## Wat moet je doen?\nElk team beoordeelt 3 video's: team 1 beoordeelt team 2, 3 en 4, enzovoort (het laatste team beoordeelt 1, 2 en 3). Ieder teamlid krijgt een video toegewezen.\n## Inleveren\nVia het MS Forms-evaluatieformulier (link op de Padlet, Morning of Afternoon), vóór 21:00. Op do 26 nov is de slotbijeenkomst."
     },
     {
       "id": "ou310600-dropbox-234659",
@@ -49,7 +52,8 @@
       "due": "2026-11-27T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=234659&ou=310600",
-      "notes": "Groep, formatief"
+      "notes": "Groep, formatief",
+      "instructions": "## Wat moet je maken?\nEen PowerPoint over de eerste 3 onderzoeksstappen:\n- 1. Partnership en eisen van de huidige Boba-producent begrijpen\n- 2. De wettelijke reden begrijpen (PPWR, Fee Modulation Plastic) om de huidige producent te evalueren en een nieuwe te zoeken\n- 3. Retail-eisen over duurzaamheid analyseren\n## Let op\nDe tutor vraagt een paar groepen om te presenteren: maximaal 10 minuten. Het is formatief: je krijgt feedback, geen cijfer.\n## Inleveren\nEén PPT per groep in de map op Brightspace, vóór 9:00."
     },
     {
       "id": "ou310600-dropbox-216188",
@@ -57,7 +61,8 @@
       "due": "2026-11-27T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216188&ou=310600",
-      "notes": "Groep. Brightspace toont 28 nov 2025; datum aangenomen."
+      "notes": "Groep. Brightspace toont 28 nov 2025; datum aangenomen.",
+      "instructions": "## Wat moet je maken?\nMinstens 5 vragen van jullie groep aan Brand Masters, die jullie nodig hebben voor het onderzoek (bijvoorbeeld over de eisen aan de leverancier, verpakking en retailers).\n## Let op\nNeem geen contact op met de huidige leverancier. Vragen lopen via Brand Masters (Annette).\n## Inleveren\nEén document per groep in de map op Brightspace."
     },
     {
       "id": "ou310600-dropbox-216208",
@@ -65,7 +70,8 @@
       "due": "2026-11-30T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216208&ou=310600",
-      "notes": "Zelf maken, zonder AI."
+      "notes": "Zelf maken, zonder AI.",
+      "instructions": "## Wat moet je maken?\nJe eigen Spaanse cv voor een stage in een Spaanstalig land.\n## Inleveren\nGebruik het *Assignments guideline & template*. Upload in de map op Brightspace, vóór 9:00. Zelf maken."
     },
     {
       "id": "ou310600-dropbox-216181",
@@ -73,7 +79,8 @@
       "due": "2026-12-04T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216181&ou=310600",
-      "notes": "Groep, formatief"
+      "notes": "Groep, formatief",
+      "instructions": "## Wat moet je maken?\nHet deel *Country Identification & Evaluation* van het project, in het verplichte template. Gebruik de theorie uit de expert sessions (zie Lesstof week 2: quick scan, PESTEL-indicatoren, country ranking framework).\n## Inleveren\nHet formatieve stuk plus jullie Collab Portfolio (met notulen van elke meeting), in de map op Brightspace, vóór 9:00."
     },
     {
       "id": "ou310600-dropbox-216209",
@@ -81,7 +88,8 @@
       "due": "2026-12-07T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216209&ou=310600",
-      "notes": "Zelf maken, zonder AI."
+      "notes": "Zelf maken, zonder AI.",
+      "instructions": "## Wat moet je maken? (2 delen)\n- Maak je Spaanse social-media-post af: je zoekt een stageplek. Gebruik het *Assignments guideline & template*.\n- Doe de quiz op Brightspace (woorden over social media) en upload een screenshot van je resultaat.\n## Inleveren\nVóór 9:00 in de map op Brightspace. Zelf maken."
     },
     {
       "id": "ou310600-dropbox-216182",
@@ -89,7 +97,8 @@
       "due": "2026-12-11T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216182&ou=310600",
-      "notes": "Groep, formatief"
+      "notes": "Groep, formatief",
+      "instructions": "## Wat moet je maken?\nHet deel *Supplier Identification and Evaluation* van het project.\n## Inleveren\nHet formatieve stuk plus jullie Collab Portfolio, in de map op Brightspace, vóór 9:00."
     },
     {
       "id": "ou310600-dropbox-216210",
@@ -97,7 +106,8 @@
       "due": "2026-12-14T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216210&ou=310600",
-      "notes": "Zelf maken, zonder AI."
+      "notes": "Zelf maken, zonder AI.",
+      "instructions": "## Wat moet je maken?\nZoek een Spaanse woningadvertentie, het liefst in de plaats waar je je stage of minor wilt doen. Schrijf een reactie op die advertentie van ongeveer 100 woorden.\n## Inleveren\nGebruik het *Assignments guideline & template*. Upload vóór 9:00. Zelf maken."
     },
     {
       "id": "ou310600-ppd-portfolio",
@@ -105,7 +115,8 @@
       "due": "2026-12-14T09:00",
       "course": "PPD (LO2)",
       "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2223005",
-      "notes": "Week 6 (14-18 dec), exacte datum en inlevermap nog niet bekend. Voorwaarde voor PPD-gesprek."
+      "notes": "Week 6 (14-18 dec), exacte datum en inlevermap nog niet bekend. Voorwaarde voor PPD-gesprek.",
+      "instructions": "## Wat moet je maken?\nJe PPD-portfolio in het verplichte template (*PPD portfolio format - Y2S1* op Brightspace): je SMART-doelen, je acties, en je reflectie, met input zoals DISC, Belbin en je sterke en zwakke punten.\n## Tips van de docenten\n- Een activiteit is geen doel (\"3 boeken lezen\"), een onderwerp ook niet (\"time management\")\n- Geen sportdoelen\n- Doe meer dan TED-talks of online cursussen\nDit is je eigen reflectie: ik kan helpen ordenen en nakijken."
     },
     {
       "id": "avans-electives-q4-registratie",
@@ -113,7 +124,8 @@
       "due": "2026-12-20T23:59",
       "course": "PPD (LO2)",
       "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2254042",
-      "notes": "Inschrijven vanaf 23 nov."
+      "notes": "Inschrijven vanaf 23 nov.",
+      "instructions": "## Wat moet je doen?\nKies in de AvansOne-app je top 3 keuzevakken voor Q4. Inschrijven kan vanaf 23 november, uiterlijk 20 december. Controleer daarna of je inschrijving gelukt is."
     },
     {
       "id": "ou310600-dropbox-216211",
@@ -121,7 +133,8 @@
       "due": "2027-01-04T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216211&ou=310600",
-      "notes": "Zelf maken, zonder AI."
+      "notes": "Zelf maken, zonder AI.",
+      "instructions": "## Wat moet je maken?\nUpload een paar resultaten van Altissia (screenshots; de afspraak is 15 uur oefenen dit blok) en je eigen woordenlijst.\n## Inleveren\nVóór 9:00 in de map op Brightspace."
     },
     {
       "id": "ou310600-dropbox-216162",
@@ -129,7 +142,8 @@
       "due": "2027-01-04T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216162&ou=310600",
-      "notes": "Individueel"
+      "notes": "Individueel",
+      "instructions": "## Wat moet je maken?\nTwee onderhandelingsvoorbereidingsformulieren (negotiation preparation sheets), in het verplichte format.\n## Inleveren\nIeder student zelf, in de map op Brightspace. Dit is de voorwaarde om mee te doen aan de roleplay."
     },
     {
       "id": "ou310600-dropbox-216163",
@@ -137,7 +151,8 @@
       "due": "2027-01-06T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216163&ou=310600",
-      "notes": "Toets, check tijdslot"
+      "notes": "Toets, check tijdslot",
+      "instructions": "## Wat moet je doen?\nEen onderhandelings-roleplay in tweetallen (je wordt individueel beoordeeld). De roleplays zijn op verschillende dagen in de eerste week van januari: check het rooster voor jouw dag en tijd."
     },
     {
       "id": "ou310600-dropbox-216166",
@@ -145,7 +160,8 @@
       "due": "2027-01-11T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216166&ou=310600",
-      "notes": "Groep. Brightspace toont 11 jan 2026; datum aangenomen."
+      "notes": "Groep. Brightspace toont 11 jan 2026; datum aangenomen.",
+      "instructions": "## Wat moet je inleveren? (6 prerequisites)\n- 1. Collaboration Portfolio (groep, verplicht template): bewijs van samenwerking, duidelijke rolverdeling en reflectie achteraf\n- 2. Project Plan / Plan of Approach\n- 3. Research document van de Partner Selection-opdracht\n- 4. Self Assessment\n- 5. PowerPoint van de pitch, met speaker notes\n- 6. AI Declaration (formulier Partner Selection - Pitch, Opp 1)\n## Let op\nControleer dat alle 6 documenten in deze map staan. Zonder complete prerequisites mag je niet pitchen."
     },
     {
       "id": "ou310600-ppd-gesprek",
@@ -153,7 +169,8 @@
       "due": "2027-01-11T09:00",
       "course": "PPD (LO2)",
       "url": "https://brightspace.avans.nl/d2l/le/lessons/310600/topics/2237925",
-      "notes": "Week 8 (11-15 jan), tijdslot in AvansOne."
+      "notes": "Week 8 (11-15 jan), tijdslot in AvansOne.",
+      "instructions": "## Wat moet je doen?\nEen individueel PPD-gesprek (Q&A) op basis van je portfolio. Je laat een realistisch beeld van jezelf zien (waarden, drijfveren, sterke punten en verbeterpunten) en een onderbouwd plan voor keuzemodules, stage en minor. Kies je tijdslot in AvansOne."
     },
     {
       "id": "ou310600-dropbox-216174",
@@ -161,7 +178,8 @@
       "due": "2027-01-11T09:00",
       "course": "IBC Spanish (LO3)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216174&ou=310600",
-      "notes": "Datum nog onbekend, check AvansOne. Week 8 aangenomen."
+      "notes": "Datum nog onbekend, check AvansOne. Week 8 aangenomen.",
+      "instructions": "## Wat moet je doen?\nEen schriftelijk tentamen Spaans (60 minuten). Je leest een tekst (bijvoorbeeld een vacature of woningadvertentie) en schrijft met de hand een reactie van ongeveer 120 woorden (beginners) waarin je op alle onderwerpen uit de tekst reageert. Een papieren woordenboek mag.\n## Voorwaarde\nJe portfolio met weekopdrachten moet compleet zijn (6 van de 7 bij kans 1)."
     },
     {
       "id": "ou310600-dropbox-216167",
@@ -169,7 +187,8 @@
       "due": "2027-01-15T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216167&ou=310600",
-      "notes": "Groepstoets, check tijdslot"
+      "notes": "Groepstoets, check tijdslot",
+      "instructions": "## Wat moet je doen?\nDe groepspitch van jullie advies aan Brand Masters: huidige leverancier ontwikkelen, een tweede leverancier toevoegen, of overstappen. Met een shortlist van producenten, de onderbouwde criteria (ook voor de landen) en de gekozen partner.\n## Wanneer\nIn de tweede week van januari 2027, per groep en per klas. Check het rooster voor jullie dag en tijdslot."
     },
     {
       "id": "ou310600-dropbox-216170",
@@ -177,7 +196,8 @@
       "due": "2027-01-15T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216170&ou=310600",
-      "notes": "Individuele toets, check tijdslot"
+      "notes": "Individuele toets, check tijdslot",
+      "instructions": "## Wat moet je doen?\nNa de groepspitch krijg je een individuele Q&A over jullie onderzoek en advies. Ken alle onderdelen van het project, ook die een groepsgenoot schreef."
     },
     {
       "id": "ou310600-dropbox-216173",
@@ -185,7 +205,8 @@
       "due": "2027-01-15T09:00",
       "course": "Partner Selection (LO1)",
       "url": "https://brightspace.avans.nl/d2l/lms/dropbox/user/folder_submit_files.d2l?db=216173&ou=310600",
-      "notes": "Individuele toets, check tijdslot"
+      "notes": "Individuele toets, check tijdslot",
+      "instructions": "## Wat moet je doen?\nBusiness Communication wordt beoordeeld in je Q&A na de pitch: Engels op niveau B2+, vakwoorden goed gebruiken (je vocabulary list), en vloeiend genoeg spreken. Minimaal 11 van de 20 punten."
     },
     {
       "id": "avans-minor-abroad-registratie",
@@ -193,7 +214,8 @@
       "due": "2027-01-31T23:59",
       "course": "PPD (LO2)",
       "url": "https://brightspace.avans.nl/d2l/le/lessons/80834/units/1802443",
-      "notes": ""
+      "notes": "",
+      "instructions": "## Wat moet je doen?\nWil je in 2027-2028 een minor in het buitenland doen? Schrijf je dan uiterlijk 31 januari 2027 in. Meer info staat in de Brightspace-module over minor abroad."
     }
   ]
 }
