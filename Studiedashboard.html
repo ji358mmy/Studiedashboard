@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#c6002a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Studie">
+  <link rel="apple-touch-icon" href="app/icons/apple-touch-icon.png">
+  <meta name="color-scheme" content="light dark">
+  <title>Studiedashboard</title>
+  <link rel="stylesheet" href="app/styles.css">
+  <script>
+    if (location.protocol === 'https:' || location.protocol === 'http:') {
+      var m = document.createElement('link'); m.rel = 'manifest'; m.href = 'manifest.webmanifest';
+      document.head.appendChild(m);
+    }
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23c6002a'/%3E%3Cpath d='M8 11l8-4 8 4-8 4z M11 13v5c0 2 10 2 10 0v-5' fill='none' stroke='white' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E">
+</head>
+<body>
+  <noscript>
+    <p class="noscript">Dit dashboard heeft JavaScript nodig. Zet JavaScript aan in je browser.</p>
+  </noscript>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Hoofdmenu">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 11l8-4 8 4-8 4z M11 13v5c0 2 10 2 10 0v-5" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>Studiedashboard</strong>
+          <small>Persoonlijk overzicht</small>
+        </span>
+      </div>
+      <nav class="nav" id="nav">
+        <a href="#overzicht" data-view="overzicht"><span class="ico" aria-hidden="true">◧</span><span class="lbl">Overzicht</span><span class="lbl-short">Overzicht</span></a>
+        <a href="#taken" data-view="taken"><span class="ico" aria-hidden="true">✓</span><span class="lbl">Taken</span><span class="lbl-short">Taken</span><span class="badge" id="nav-badge" hidden></span></a>
+        <a href="#week" data-view="week"><span class="ico" aria-hidden="true">▦</span><span class="lbl">Week</span><span class="lbl-short">Week</span></a>
+        <a href="#vakken" data-view="vakken"><span class="ico" aria-hidden="true">◎</span><span class="lbl">Vakken &amp; cijfers</span><span class="lbl-short">Vakken</span></a>
+        <a href="#aantekeningen" data-view="aantekeningen"><span class="ico" aria-hidden="true">✎</span><span class="lbl">Aantekeningen</span><span class="lbl-short">Notities</span></a>
+        <a href="#instellingen" data-view="instellingen"><span class="ico" aria-hidden="true">⚙</span><span class="lbl">Instellingen</span><span class="lbl-short">Meer</span></a>
+      </nav>
+      <div class="sidebar-foot">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Wissel licht of donker">
+          <span id="theme-label">Weergave: automatisch</span>
+        </button>
+        <p class="disclaimer">Eigen hulpmiddel. Geen officiële app van Avans Hogeschool.</p>
+      </div>
+    </aside>
+
+    <main class="main" id="main" tabindex="-1">
+      <div id="banner" class="banner" role="status" hidden></div>
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <dialog id="dialog" class="dialog" aria-labelledby="dialog-title"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app/core.js"></script>
+  <script src="app/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Studiedashboard",
+  "short_name": "Studie",
+  "description": "Persoonlijk overzicht van deadlines, vakken, cijfers en aantekeningen.",
+  "lang": "nl",
+  "start_url": "Studiedashboard.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5f3",
+  "theme_color": "#c6002a",
+  "icons": [
+    { "src": "app/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "app/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
