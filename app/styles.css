@@ -423,7 +423,7 @@ textarea.input.tall { min-height: 260px; }
 .ls-table th { background: var(--surface-2); }
 .ls-foot { color: var(--text-muted); font-size: 13px; margin-top: 16px; }
 /* Uitleg bij een opdracht */
-.task-instr { margin-top: 8px; font-size: 14px; }
+.task-instr { grid-column: 2 / -1; font-size: 14px; min-width: 0; }
 .task-instr > summary { cursor: pointer; color: var(--accent); font-weight: 600; }
 .task-instr-body { margin-top: 6px; padding: 8px 12px; background: var(--surface-2); border-radius: var(--radius-sm); line-height: 1.5; }
 .task-instr-body p { margin: 6px 0; }

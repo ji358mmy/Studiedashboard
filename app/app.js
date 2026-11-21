@@ -216,11 +216,11 @@
 
     return h('li', { class: 'task' + (task.done ? ' done' : ''), style: course ? { '--course-color': course.color } : null },
       check,
-      h('div', { class: 'task-main' }, h('div', { class: 'task-title', text: task.title }), meta,
-        task.feed && task.feed.instructions && !task.done && !opts.compact
-          ? h('details', { class: 'task-instr' }, h('summary', { text: 'Wat moet je maken?' }), instructionsBlock(task.feed.instructions))
-          : null),
-      actions
+      h('div', { class: 'task-main' }, h('div', { class: 'task-title', text: task.title }), meta),
+      actions,
+      task.feed && task.feed.instructions && !task.done && !opts.compact
+        ? h('details', { class: 'task-instr' }, h('summary', { text: 'Wat moet je maken?' }), instructionsBlock(task.feed.instructions.replace(/^## Wat moet je (maken|doen)\?\s*\n/, '')))
+        : null
     );
   }
 
