@@ -4,7 +4,7 @@
  * Verhoog VERSION na elke wijziging, dan haalt de app de nieuwe bestanden op.
  */
 'use strict';
-var VERSION = 'studiedashboard-v9';
+var VERSION = 'studiedashboard-v10';
 var FILES = [
   './',
   'index.html',

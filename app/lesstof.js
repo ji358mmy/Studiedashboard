@@ -5,7 +5,7 @@
  * de repository is openbaar.
  */
 window.SD_LESSTOF = {
-  updatedAt: '2026-11-21',
+  updatedAt: '2026-11-23',
   weeks: [
     {
       id: 'week-3-voorbereiding',
@@ -295,7 +295,7 @@ Op di 17 nov was het **bezoek aan Brussel** (Europese Commissie, handelsbeleid).
 
 Het thema was **Intercultural Negotiations**: hoe cultuur het onderhandelen beïnvloedt (direct of indirect communiceren, relatie eerst of deal eerst, hoe je met hiërarchie en tijd omgaat). De dia's staan nog niet online; dit wordt aangevuld zodra ze er zijn.
 
-BusComm oefende **cold-call e-mails en de openingszin van een gesprek**. De voorbereiding was een Forbes-artikel over de do's en don'ts van cold e-mail outreach en een video over communicatie in cross-culturele onderhandelingen. Zet nieuwe woorden in je vocabulary list, met de bron in APA.
+BusComm oefende **cold-call e-mails en de openingszin van een gesprek**. De voorbereiding was een Forbes-artikel over de do's en don'ts van cold e-mail outreach en een video over communicatie in cross-culturele onderhandelingen. Zet nieuwe woorden in je vocabulary list, met de bron in APA.\n\n**De BusComm-dia's van week 2 staan nu online.** Zo zat de les in elkaar:\n\n- **Doel:** na de les kun je informatie uit verschillende media vergelijken, een cold-call e-mail plus follow-up schrijven en een eerste gesprek met een prospect naspelen.\n- **Elevator pitch (warm-up):** je staat alleen in de lift met een mogelijke leverancier. In 30 seconden overtuig je hem om na zijn meeting met je te praten. Let op duidelijkheid, toon en overtuigingskracht.\n- **Cold-call e-mail:** schrijf in duo's een eerste e-mail aan een buitenlandse leverancier. Houd rekening met de lezer: land, cultuur en branche. Een ander duo controleert twee dingen: heb je je aangepast aan de cultuur en positie van de ontvanger, en laat je zien dat je de branche van de leverancier kent?\n- **Follow-up als rollenspel:** de leverancier wil een videocall. De ene helft speelt het bedrijf, de andere helft de leverancier, en je onderhandelt een eerste deal. Daarna bespreek je: 3 dingen die goed gingen, 3 die stroef gingen, waarom, en hoe beide kanten hun toon en inhoud aanpasten.\n\n**Tip van de docent:** kom voorbereid, geef opbouwende feedback in plaats van alleen een mening, en durf mee te doen aan het rollenspel. Bij Partner Selection kun je dit direct gebruiken: de e-mail naar een leverancier in stap 4-5 is precies zo'n cold-call e-mail.
 
 ### PPD week 2: deep listening en inclusive decision making
 
@@ -340,7 +340,7 @@ Het thema van de lessen was "la oficina del futuro" (voor- en nadelen geven). We
 
 ### Vooruitblik week 3
 
-De eerste **Finance**-sessie begint met een quiz. Lees vooraf **Peng & Meyer, International Business, hoofdstuk 7 (Exchange rates), p. 193-201**. Op di 24 nov is de gastles **Risk Assessment** (10:00-11:30, geen dia's, dus maak aantekeningen).`
+**Business Communication week 3 (ma 23 nov, 12:00):** neem een bijgewerkte vocabulary list mee in het juiste format, schrijf 5 verschillen op tussen een introductie-e-mail en een follow-up, en ken de belangrijkste onderzoeksresultaten en strategieën uit het document *Supplier Relationship Management* (staat in Brightspace). In de les: kopen en verkopen, vocabulary poker, soorten e-mails en een rollenspel met goed en slecht nieuws brengen.\n\n**Project week 3:** in les 3.2 presenteer je groep de Flip the Classroom (stap 1-3). Pas ook het projectplan aan op de feedback en begin aan stap 4.\n\nDe eerste **Finance**-sessie begint met een quiz. Lees vooraf **Peng & Meyer, International Business, hoofdstuk 7 (Exchange rates), p. 193-201**. Op di 24 nov is de gastles **Risk Assessment** (10:00-11:30, geen dia's, dus maak aantekeningen).`
     }
   ]
 };
