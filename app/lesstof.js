@@ -8,7 +8,125 @@ window.SD_LESSTOF = {
   updatedAt: '2026-11-21',
   weeks: [
     {
+      id: 'week-3-voorbereiding',
+      order: 3,
+      title: 'Week 3 voorbereiding (concept, groepswerk)',
+      markdown: `*Concept voor twee groepsopdrachten, allebei in te leveren op **vr 27 nov 9:00**: Questions for Brand Masters (minstens 5 vragen) en Flip the Classroom (PPT over stap 1 t/m 3, max. 10 minuten). Deel dit met je groep en verdeel wie welke stap afmaakt. Check de punten onder "Nog checken" voordat ze op een dia komen.*
+
+### Questions for Brand Masters (kies er minstens 5)
+
+Vragen die je niet online kunt vinden. Let op: geen contact met de huidige leverancier, vragen gaan via Brand Masters.
+
+**Step 1: Partnership and requirements of the current producer**
+
+1. Which criteria did Brand Masters use when it chose Shanggao Rich Want, and which of these criteria are most important today?
+2. How does Brand Masters rate the current producer on quality, delivery and communication? Is there a recent audit score (green, orange or red)?
+3. What is the packaging of the Boba drink exactly (materials, weight per part, cup or bottle, lid, straw, label)? Can we receive the product specification?
+4. What is the 2027 target for recycled or biobased BrandLab packaging, and how far is Brand Masters now?
+
+**Step 2: Legal cause (PPWR and Fee Modulation Plastic)**
+
+5. Which PPWR documents does the current producer already deliver (for example a Declaration of Compliance with PFAS information), and which documents are still missing?
+6. Does Brand Masters already use the Verpact Fee Modulation Plastic discount for other products? If yes, how do you collect the proof from suppliers?
+
+**Step 3: Retail requirements**
+
+7. Which retailers sell the Boba drink, and which packaging or sustainability demands from these retailers are the strictest?
+8. Have retailers ever refused or delisted a product because of its packaging?
+
+**Step 5 to 7: Selection and options**
+
+9. What is the maximum price increase per unit that Brand Masters accepts for more sustainable packaging?
+10. What would make Brand Masters choose a second producer instead of only improving the current one (for example volume, risk or price)?
+
+### Flip the Classroom: stap 1 (dia 1-5)
+
+**Slide 1: Title.** Partner Selection: Boba drink for Brand Masters. Steps 1 to 3. Group 5, Class B.
+
+**Slide 2: The business challenge**
+
+- Brand Masters (Breda) links more than 180 suppliers with over 440 non-food retailers in Europe (net sales EUR 326 million in 2024).
+- Through BrandLab it made its own ready-to-drink Boba drink brand, produced by Shanggao Rich Want in China (bulk orders of 200,000 to 500,000 items, shelf life 1 year).
+- Question: keep and develop this producer, add a second producer, or change to a new producer?
+
+**Slide 3: What Brand Masters needs from a producer**
+
+- Food safety: a GFSI-recognised certificate (BRCGS, IFS, FSSC 22000 or SQF).
+- For each product: Declaration of Compliance (including PFAS), Certificate of Analysis, flow chart.
+- Packaging: FSC for cardboard, PPWR compliance.
+- For Action: a social audit, RSPO (palm oil) and Rainforest Alliance where relevant.
+- The Brand Masters Code of Conduct (fair work, environment, ethics).
+
+**Slide 4: How Brand Masters checks a producer**
+
+- Desk study, then factsheets and documents, then a supplier audit.
+- Audit score: above 94% is green (audit every 3 years), 80 to 94% is orange (every 2 years), below 80% is red (every year).
+- Product check: ingredients against EU law, packaging (DoC, migration), product safety (contaminants EU 2023/915, microbiology EU 2073/2005).
+
+**Slide 5: What we still need to know.** The current packaging specification, the audit score of the current producer, and the 2027 BrandLab target (see our questions).
+
+### Flip the Classroom: stap 2 (dia 6-8)
+
+**Slide 6: The PPWR in one timeline**
+
+| Date | What changes |
+|---|---|
+| 11 Feb 2025 | PPWR (Regulation (EU) 2025/40) enters into force |
+| 12 Aug 2026 | PPWR applies. No PFAS above the limits in food-contact packaging |
+| 12 Aug 2028 (or later) | Harmonised label showing the material |
+| 1 Jan 2030 | Designed for recycling (grade A, B or C), minimum recycled content in plastic, weight and volume kept to the minimum |
+| 1 Jan 2035 | Packaging must be recycled at scale |
+| 1 Jan 2038 | Only grade A or B allowed |
+| 1 Jan 2040 | Higher minimum recycled content |
+
+**Slide 7: What this means for the producer**
+
+- Brand Masters (the "manufacturer") needs a technical file and an EU declaration of conformity (Articles 15, 38 and 39).
+- The producer must give Brand Masters all information about the packaging (Article 16): materials, substances, recycled content.
+- A producer who cannot give this information, or cannot change to recyclable packaging with recycled content, becomes a risk after 2030.
+
+**Slide 8: Fee Modulation Plastic (Verpact)**
+
+- Companies in the Netherlands pay a packaging waste fee to Verpact. Plastic packaging that is easy to recycle gets a discount.
+- 2026 scheme: EUR 0.20 per kg for recycled content (at least 10% for food packaging), plus EUR 0.10 per kg for each design step: mono-material (at least 95% PET, PE or PP for rigid), colourless or white, labels that do not block recycling, and an "optimal recyclable" KIDV Recycle Check. Maximum EUR 0.60 per kg.
+- Deposit packaging does not get this discount.
+- Proof must come from the supplier's specification (materials, weights, recycled share), kept for 7 years. So the producer must deliver exact packaging data.
+
+### Flip the Classroom: stap 3 (dia 9-11)
+
+**Slide 9: What retailers ask from suppliers** (nog invullen uit de duurzaamheidsverslagen)
+
+| | Action | HEMA | Carrefour |
+|---|---|---|---|
+| Packaging target | invullen | invullen | invullen |
+| Supplier rules | Social audit, RSPO, Rainforest Alliance (uit de Brand Masters-presentatie) | invullen | invullen |
+| Climate target | invullen | invullen | invullen |
+
+Waar zoeken: HEMA op hema.com (duurzaamheidsverslagen), Action op corporate.action.com (sustainability), Carrefour op carrefour.com (CSR, packaging).
+
+**Slide 10: Conclusion for the producer.** One sentence per demand, for example: "The producer must use recyclable mono-material packaging with recycled content, because retailers X and Y require this from 20XX."
+
+**Slide 11: Next steps.** Step 4: country identification and evaluation (formative assignment week 4, Fri 4 Dec).
+
+### Bronnen en nog checken
+
+**Sources (APA)**
+
+- Brand Masters. (2026, November 10). *Company presentation Brand Masters* [Slides]. Avans Brightspace.
+- European Union. (2025). *Regulation (EU) 2025/40 on packaging and packaging waste*. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202500040
+- Latham & Watkins. (2026, April 24). *European Packaging and Packaging Waste Regulation: Summary of provisions and new guidance*. https://www.lw.com/en/insights/european-packaging-and-packaging-waste-regulation-summary-of-provisions-and-new-guidance
+- Verpact. (2025). *Fee Modulation Plastic 2026 scheme*. https://www.verpact.nl/sites/default/files/2025-11/regeling_tariefdifferentiatie_plastic_2026_en.pdf
+
+**Nog checken**
+
+- PFAS-grenzen (artikel 5) en recyclaat-percentages voor 2030 en 2040 (artikel 7) in de wettekst.
+- Verpact-regels voor 2027 (alleen 2026 gevonden).
+- Of de Boba drink onder statiegeld valt: hangt af van de verpakking (vraag 3).
+- Alle retail-cijfers in stap 3.`
+    },
+    {
       id: 'week-1',
+      order: 1,
       title: 'Week 1 (9 t/m 13 november)',
       markdown: `*Bronnen: kick-off, Project Launch 1.1 en 1.2, Expert Session Wk1 Buying Behaviour, Negotiation Wk1, BusComm W1, COIL-presentatie, PPD week 1, Español clase 1 en 2.*
 
@@ -138,6 +256,7 @@ De weekopdrachten (e-mail naar een partneruniversiteit, enz.) schrijf je zelf, z
     },
     {
       id: 'week-2',
+      order: 2,
       title: 'Week 2 (16 t/m 20 november)',
       markdown: `*Bronnen: Tutor Session Week 2, Expert Session Wk2 Country Identification and Evaluation, PPD week 2, Español clase 3 en 4, BusComm W2-voorbereiding. Van Negotiation week 2 (Intercultural Negotiations) staan nog geen dia's op Brightspace.*
 

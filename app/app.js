@@ -1066,7 +1066,7 @@
       append(root, emptyBox('Nog geen lesstof', 'De samenvattingen worden per week toegevoegd.'));
       return root;
     }
-    var weeks = L.weeks.slice().reverse(); // nieuwste week bovenaan
+    var weeks = L.weeks.slice().sort(function (a, b) { return (b.order || 0) - (a.order || 0); }); // nieuwste bovenaan
     if (!state.lesstofWeek || !weeks.some(function (w) { return w.id === state.lesstofWeek; })) state.lesstofWeek = weeks[0].id;
     append(root, h('div', { class: 'segmented ls-tabs', role: 'tablist' }, weeks.map(function (w) {
       var on = w.id === state.lesstofWeek;
