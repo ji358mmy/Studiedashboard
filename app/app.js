@@ -425,6 +425,14 @@
 
   /* ---------------- Week ---------------- */
 
+  // Lessen uit app/rooster.js (window.SD_ROOSTER), gesorteerd op begintijd.
+  function roosterOnDay(key) {
+    var R = window.SD_ROOSTER;
+    if (!R || !R.lessons) return [];
+    return R.lessons.filter(function (l) { return l && l.date === key && l.title; })
+      .sort(function (a, b) { return String(a.start).localeCompare(String(b.start)); });
+  }
+
   function viewWeek() {
     var d = state.data, n = now();
     var ref = new Date(n.getFullYear(), n.getMonth(), n.getDate() + state.weekOffset * 7);
@@ -447,6 +455,10 @@
       var tasks = SD.tasksOnDay(d.tasks, day);
       var col = h('div', { class: 'day' + (key === todayKey ? ' today' : '') + (i >= 5 ? ' weekend' : '') },
         h('div', { class: 'day-head' }, h('strong', { text: SD.DAYS_LONG[day.getDay()] }), h('span', { text: day.getDate() + ' ' + SD.MONTHS[day.getMonth()] })),
+        roosterOnDay(key).map(function (l) {
+          return h('div', { class: 'lesson', title: l.title + (l.location ? ' · ' + l.location : '') },
+            h('span', { class: 'time', text: l.start + (l.end ? '–' + l.end : '') + (l.location ? ' · ' + l.location : '') }), l.title);
+        }),
         tasks.map(function (t) {
           var c = courseById(t.courseId);
           var time = t.due.slice(11, 16);
@@ -460,6 +472,10 @@
       append(grid, col);
     });
     append(root, grid);
+    var R = window.SD_ROOSTER;
+    append(root, h('p', { class: 'ls-foot', text: R && R.lessons && R.lessons.length
+      ? 'Lessen uit je AvansOne-rooster (grijs), bijgewerkt: ' + R.updatedAt + '. Kijk bij wijzigingen altijd in AvansOne.'
+      : 'Je rooster uit AvansOne komt hier zodra het is ingelezen.' }));
 
     var noDate = d.tasks.filter(function (t) { return !t.due && !t.done; });
     if (noDate.length) {

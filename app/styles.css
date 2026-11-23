@@ -430,3 +430,8 @@ textarea.input.tall { min-height: 260px; }
 .task-instr-body h4 { margin: 10px 0 4px; font-size: 14px; }
 .task-instr-body ul { margin: 4px 0; padding-left: 20px; }
 .task-instr.open { margin-top: 4px; }
+
+/* Rooster-lessen in de weekweergave */
+.lesson { display: block; font-size: 12px; line-height: 1.3; padding: 6px 8px; margin: 0 0 6px; border-radius: 8px;
+  background: var(--surface-2, rgba(127,127,127,.12)); color: var(--text-2, inherit); border-left: 3px solid rgba(127,127,127,.5); }
+.lesson .time { display: block; opacity: .75; font-size: 11px; }
