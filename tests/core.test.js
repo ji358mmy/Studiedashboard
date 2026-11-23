@@ -511,6 +511,15 @@
     });
   });
 
+  test('feed: uitleg bij een opdracht wordt bewaard en bijgewerkt', function () {
+    var r1 = SD.mergeFeed(SD.emptyData(), feed([{ id: 'a', title: 'A', instructions: 'Maak X' }]));
+    assert.equal(r1.data.tasks[0].feed.instructions, 'Maak X');
+    var r2 = SD.mergeFeed(r1.data, feed([{ id: 'a', title: 'A', instructions: 'Maak Y' }]));
+    assert.equal(r2.data.tasks[0].feed.instructions, 'Maak Y');
+    assert.equal(r2.updated, 0);
+    var r3 = SD.mergeFeed(SD.emptyData(), feed([{ id: 'b', title: 'B', instructions: 5 }]));
+    assert.equal(r3.data.tasks[0].feed.instructions, '');
+  });
   test('upsert: toevoegen en vervangen', function () {
     var list = [{ id: 'a', v: 1 }];
     SD.upsert(list, { id: 'a', v: 2 });
